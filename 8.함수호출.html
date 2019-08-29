@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            var text1 = '함수 호출 전';
+            var text2 = '함수 호출 후';
+            texts(text1);
+            function texts(msg) {
+                document.write("함수 호출: " + msg +"<br>");
+            }
+            texts(text2);
+        </script>
+
+        <script>
+            var name;
+            var age;
+            var like;
+            var fruit;
+            function hiddenmsg(name, age, like, fruit) {
+                document.write("이름 : " + name + "<br>");
+                document.write("나이 : " + age + "<br>");
+                document.write("좋아하는 것 : " + like + "<br>");
+                document.write("좋아하는 과일 : " + fruit + "<br>");
+            }
+        </script>
+
+        <script>
+            var howmay;
+            function repeat(howmany){
+                for (i = 0; i < howmany; i++) {
+                    document.write('ㅋ');
+                }
+            }
+        </script>
+
+        <script>
+            var letter = 'loveyou';
+            function len() {
+                for (i = 0; i < letter.length; i++) { ///length = 문자열의 길이 반환
+                    document.write("글자의 길이만큼 반복 ("+(letter[i]) +")<br>");
+                }
+            }
+        </script>
+        
+        <!--버튼 클릭시 함수내용이 새로운 페이지에 쓰임(뒤로가기 없이) , 새로고침 필요!-->
+        <br><button type="button" onclick="hiddenmsg('신효경', 23, '발라드', '수박')">개인 정보</button> <!--char형태 따옴표 표시 주의!-->
+        <br><br><button type="button" onclick="repeat(100)">반복해서 적기</button>
+        <br><br><button type="button" onclick="len()">길이를 반환해서 반복해서 적기</button>
+    </body>
+</html>

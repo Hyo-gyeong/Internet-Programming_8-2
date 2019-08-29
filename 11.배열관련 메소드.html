@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--1.join 메소드-->
+        <!--배열에 저장된 원소를 문자열로 변환한 후 연결하여 출력 | 기본은 ',' | 다른 문자 지정 가능-->
+    </head>
+
+    <body>
+        <script>
+            var city=['서울','부산','광주','대전']
+            var join1=city.join();
+            document.write("기본 join결과 : "+join1+"<p/>");
+            var join2=city.join('&');
+            document.write("원하는 문자로 join결과 : "+join2+"<p/>");
+        </script>
+    </body>
+
+    <head>
+        <!--2.concat 메소드-->
+        <!--단순 결합-->
+    </head>
+    <body>
+        <script>
+            var num1=[1,2,3,4];
+            var num2=[5,6,7,8];
+            var num3=[9,10];
+
+            var con=num1.concat(num2);
+            var con1 = con.concat(num3);
+            var con2 = con1.concat(11);
+            document.write("concat결과1(배열끼리) : "+ con +"<p/>");
+            document.write("concat결과2(배열과 concat한 변수) : "+ con1 +"<p/>");
+            document.write("concat결과3(concat한 변수와 원소) : "+ con2 +"<p/>");
+        </script>
+    </body>
+    <head>
+        <!--3.reverse 메소드-->
+        <!--배열 원소 순서 반대로-->
+    </head>
+</html>

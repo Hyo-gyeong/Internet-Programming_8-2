@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--arguments객체 : 인자의 개수가 너무 많거나 자주 변하는 경우 arguments 객체의 배열(array) 구조로 인자를 처리하면 편리함.-->
+    </head>
+
+    <body>
+        <script>
+            function add() {
+                var i, sum = 0;
+                for (i = 0; i < arguments.length; i++) { //arguments.length를 이용해서 계속 변하는 인자의 개수 일일이 세서 적을필요 없음.
+                    sum = sum+arguments[i];
+                }
+                document.write("수행 결과 : " + sum + "<p/>");
+            }
+            add(2,3);
+            add(1,2,3,4,5,6,7);
+            add(13,25,35,65,27,86);
+            add(14,4,2,6,4,7,9,6,37,43);
+        </script>
+    </body>
+</html>

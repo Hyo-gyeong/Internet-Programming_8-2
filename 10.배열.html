@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--js 배열의 특징-->
+        <!--1. 명시되지 않은 원소 undefined로 처리-->
+    </head>
+
+    <body>
+        <script>
+            var computer=['js','C','html','Django','css',,]; // ['ㄱ','ㄴ',]; 이렇게 끝나면 undefined처리 안됨. ,,사이에 공백 있어야 처리됨.
+            var i;
+
+            function c_array() {
+                document.write("내가 배워본 컴퓨터 언어들...  ")
+                for (i = 0; i < computer.length; i++) {
+                    document.write(computer[i]+" ");
+                }
+            }
+            c_array();
+        </script>
+    </body>
+
+    <head>
+        <!--2. 데이터 공백의 경우 계산시 NaN 뜨지만 if문.... === undefined로 처리가능-->
+    </head>
+
+    <body>
+        <script>
+            var addarray=[5,16,23,,8,22,7,,37];
+            var sum, count = 0;
+
+            document.write('<p/>총 입력할 데이터 : '+addarray.length+'개<p/>');
+
+            function add(){
+                for(i = 0; i < addarray.length; i++){
+                    if (addarray[i] === undefined){
+                        continue;
+                    }
+                    else {
+                        sum =+ addarray[i];
+                        count++;
+                    }
+                }                
+            }
+            add();
+            document.write('계산된 데이터의 개수 : '+count+'개<p/>');
+            document.write('계산된 데이터의 합 : '+sum);
+        </script>
+    </body>
+
+
+    <head>
+        <!--3. 다양한 데이터타입 같은 배열에 저장 가능-->
+    </head>
+
+    <body>
+        <script>
+            var like='음악';
+            var vary=['신효경',23,like,true];
+            var i;
+            
+            document.write('<span style="color:#C5299A ; font-size:20px;"><br><br>배열안에 다양한 데이터타입 들어갈 수 있음!!<br></span>');
+            for(i = 0; i < vary.length; i++) {
+                document.write('<p/>배열의 '+(i+1)+"번째 요소 : " +vary[i]);
+            }
+        </script>
+    </body>
+
+    <head>
+        <!--배열의 합-->
+        <!--1. 배열에 원소를 저장해서 모두 더하기-->
+    </head>
+    <body>
+        <script>
+            var arr=[];
+            var i;
+            var endNum = 100;
+
+            function putArr(){
+                for (i = 0; i < endNum; i++){
+                    arr[i]= i+1;
+                }
+                list();
+            }
+
+            function list(){
+                document.write('배열 :');
+                for (i = 0; i < arr.length; i++){
+                    document.write(arr[i]+" ");
+                }
+                sum();
+            }
+            function sum() {
+                var sum = 0;
+                for (i = 0; i < arr.length; i++){
+                    sum += arr[i]; //+= 기호 까먹지 말자~;
+                }
+                document.write("<p/>1부터 "+endNum+" 까지의 합 : "+sum);
+                document.write("<p/><a href='10.배열.html'>뒤로 돌아가기</a>");
+            }
+
+
+            function putArr_2(){
+                for (i = 0; i < endNum; i++){
+                    arr[i]= i+1;
+                }
+                list_2(); //list로 이름이 같아버리면 가장 마지막에 적은 함수이름으로 가기때문에 함수이름 다르게 해주어야함.
+            }
+
+            function list_2(){
+                document.write('배열 :');
+                for (i = 0; i < arr.length; i++){
+                    if(i % 2 == 0) { //홀수번째 원소 제거
+                        arr[i] = 0;
+                    }
+                    document.write(arr[i]+" ");
+                }
+                sum_2();
+            }
+            function sum_2() {
+                var sum = 0;
+                for (i = 0; i < arr.length; i++){
+                    sum += arr[i]; //+= 기호 까먹지 말자~;
+                }
+                document.write("<p/>1부터 "+endNum+" 까지 짝수번째 원소들의 합 : "+sum);
+                document.write("<p/><a href='10.배열.html'>뒤로 돌아가기</a>");
+            }
+
+            function change() {
+                putArr_2();
+            }
+        </script>
+        <p><button type="button" onclick="putArr()">배열 조회 및 합 계산</button></p>
+        <p><button type="button" onclick="change()">홀수번째 원소를 뺀 합</button></p>
+        <p>배열 초기화 방법 = 배열이름.length = 0으로 만들어버리기!</p>
+    </body>
+</html>
